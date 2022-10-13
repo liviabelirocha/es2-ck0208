@@ -1,9 +1,7 @@
 # 💸 Desenvolvimento com blockchain
 
-## Engenharia de Software II
-## Lívia Belizário Rocha - 418304
-
-<br/>
+- Engenharia de Software II
+- Lívia Belizário Rocha - 418304
 
 # 🔗 Links
 1. [Metamask](https://metamask.io/)
@@ -12,6 +10,6 @@
 
 # 📁 Passos
 
-1. Criação de uma ERC20
-2. Criação de uma ERC20 utilizando OpenZeppelin
-3. Adicionando novas features
+1. [Criação de uma ERC20](1_Token.sol)
+2. [Criação de uma ERC20 utilizando OpenZeppelin](2_TokenOpenZeppelin.sol)
+3. [Adicionando novas features](3_TokenDone.sol)
