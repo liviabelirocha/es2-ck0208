@@ -1,28 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-interface IERC20 {
-    function totalSupply() external view returns (uint);
-
-    function balanceOf(address account) external view returns (uint);
-
-    function transfer(address recipient, uint amount) external returns (bool);
-
-    function allowance(address owner, address spender) external view returns (uint);
-
-    function approve(address spender, uint amount) external returns (bool);
-
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint amount
-    ) external returns (bool);
-
-    event Transfer(address indexed from, address indexed to, uint value);
-    event Approval(address indexed owner, address indexed spender, uint value);
-}
-
-contract MoedaEngSoft2 is IERC20 {
+contract MoedaEngSoft2 {
     uint public totalSupply;
     mapping(address => uint) public balanceOf;
     mapping(address => mapping(address => uint)) public allowance;
@@ -30,6 +9,10 @@ contract MoedaEngSoft2 is IERC20 {
     string public name = "MoedaEngSoft2";
     string public symbol = "ES2";
     uint8 public decimals = 18;
+
+    constructor() {
+        mint(50 * 10**18);
+    }
 
     function transfer(address recipient, uint amount) external returns (bool) {
         balanceOf[msg.sender] -= amount;
@@ -56,9 +39,12 @@ contract MoedaEngSoft2 is IERC20 {
         return true;
     }
 
-    function mint(uint amount) external {
+    function mint(uint amount) internal {
         balanceOf[msg.sender] += amount;
         totalSupply += amount;
         emit Transfer(address(0), msg.sender, amount);
     }
+
+    event Transfer(address indexed from, address indexed to, uint value);
+    event Approval(address indexed owner, address indexed spender, uint value);
 }
