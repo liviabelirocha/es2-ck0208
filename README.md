@@ -18,4 +18,3 @@
 ## 📁 Passos
 1. [Criação de uma ERC20](1_Token.sol)
 2. [Criação de uma ERC20 utilizando OpenZeppelin](2_TokenOpenZeppelin.sol)
-3. [Adicionando novas features](3_TokenDone.sol)
